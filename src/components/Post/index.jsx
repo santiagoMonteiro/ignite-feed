@@ -1,5 +1,8 @@
-export function Post() {
+export function Post({ author, content }) {
   return (
-    <div>POST</div>
-  ); 
+    <>
+      <div>{author}</div>
+      <div>{content}</div>
+    </>
+  );
 }
