@@ -1,9 +1,9 @@
-import { Header } from './components/Header'
-import { Post } from './components/Post'
+import { Header } from "./components/Header";
+import { Post } from "./components/Post";
+import { Sidebar } from "./components/Sidebar";
 
-import './styles/global.css'
-import styles from './styles/App.module.scss'
-import { Sidebar } from './components/Sidebar'
+import "./styles/global.css";
+import styles from "./styles/App.module.scss";
 
 export function App() {
   return (
@@ -17,5 +17,5 @@ export function App() {
         </main>
       </div>
     </>
-  )
+  );
 }
