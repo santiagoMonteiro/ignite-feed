@@ -14,6 +14,7 @@ export function App() {
         <Sidebar />
         <main>
           <Post author="Santiago Monteiro" content="Isso aqui é um post" />
+          <Post author="Santiago Monteiro" content="Isso aqui é um post" />
         </main>
       </div>
     </>
