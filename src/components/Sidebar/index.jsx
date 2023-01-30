@@ -19,7 +19,7 @@ export function Sidebar() {
         <strong>Santiago Monteiro</strong>
         <span>Web Developer</span>
       </div>
-
+      
       <footer>
         <a href="#">
           <PencilLine size={20} />
