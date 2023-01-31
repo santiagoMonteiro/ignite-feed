@@ -14,10 +14,21 @@ export function Post({ author, content, publishedAt }) {
   const publishedDateRelativeFromNow =
     dateFns.getPublishedDateRelativeFromNow(publishedAt);
 
+  const isNewCommentEmpty = newCommentText.length === 0;
+
   function handleCreateNewComment() {
     event.preventDefault();
     setComments([...comments, newCommentText]);
     setNewCommentText("");
+  }
+
+  function handleNewCommentChange() {
+    event.target.setCustomValidity("");
+    setNewCommentText(event.target.value);
+  }
+
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity("Esse campo é obrigatório!");
   }
 
   function deleteComment(commentToBeDeleted) {
@@ -66,13 +77,17 @@ export function Post({ author, content, publishedAt }) {
         <strong>Deixe seu feedback</strong>
 
         <textarea
-          onChange={(e) => setNewCommentText(e.target.value)}
+          onChange={handleNewCommentChange}
           value={newCommentText}
           placeholder="Deixe um comentário"
+          onInvalid={handleNewCommentInvalid}
+          required
         />
 
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
 
